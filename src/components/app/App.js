@@ -15,10 +15,10 @@ const App = () => {
       <h1>App Page</h1>
       <NavbarContainer />
       <Switch>
-        <Route path='/' component={Home} exact />
-        <Route path='/news' component={News} />
-        <PrivateRoute path='/profile' component={ProfileContainers} />
-        <Route path='/login' component={LoginContainer} />
+        <Route path="/" component={Home} exact />
+        <Route path="/news" component={News} />
+        <PrivateRoute path="/profile" component={ProfileContainers} />
+        <Route path="/login" component={LoginContainer} />
         <Route component={NotFound} />
       </Switch>
     </div>

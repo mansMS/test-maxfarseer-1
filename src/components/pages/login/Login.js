@@ -22,7 +22,7 @@ const Login = ({ logIn }) => {
   }
 
   if (redirectToPreviousRoute) {
-    return <Redirect to={'/profile'} />
+    return <Redirect to="/profile" />
   }
 
   return (
@@ -30,21 +30,22 @@ const Login = ({ logIn }) => {
       <h1>Login Page</h1>
       <form onSubmit={(e) => handleSubmit(e)}>
         <input
-          data-field-name={'username'}
-          type={'text'}
-          placeholder={'Имя'}
+          data-field-name="username"
+          type="text"
+          placeholder="Имя"
           value={username}
           onChange={(e) => setUsername(e.currentTarget.value)}
         />
         <input
-          data-field-name={'password'}
-          type={'text'}
-          placeholder={'Пароль'}
+          data-field-name="password"
+          type="text"
+          placeholder="Пароль"
           value={password}
           onChange={(e) => setPassword(e.currentTarget.value)}
         />
         <button type="submit">Log in</button>
       </form>
+      
       {loginFailed &&
         <p>Имя пользователя или пароль введены не верно</p>
       }

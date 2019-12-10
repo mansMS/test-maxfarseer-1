@@ -13,7 +13,6 @@ const App = () => {
   return (
     <div className="App">
       <h1>App Page</h1>
-      <h1>App Page</h1>
       <NavbarContainer />
       <Switch>
         <Route path="/" component={Home} exact />

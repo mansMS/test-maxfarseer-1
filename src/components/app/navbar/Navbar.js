@@ -5,7 +5,7 @@ import './Navbar.css';
 const Navbar = ({ isClientAuthorized })=> {
   return (
     <div className="Navbar">
-      <NavLink to="/" exact={true} activeClassName="active">Главная</NavLink>
+      <NavLink to="/" activeClassName="active" exact>Главная</NavLink>
       <NavLink to="/news">Новости</NavLink>
       {
         isClientAuthorized ? (

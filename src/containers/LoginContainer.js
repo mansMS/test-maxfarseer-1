@@ -4,9 +4,7 @@ import Login from '../components/pages/login';
 import { logIn } from '../actions';
 
 const LoginContainer = ({ logIn }) => {
-    return (
-        <Login logIn={logIn} />
-    )
+    return <Login logIn={logIn} />
 }
 
 const mapDispatchToProps = {logIn}

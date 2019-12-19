@@ -1,40 +1,26 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
-import areCredentialsValid from '../../../helpers/session';
+import Spinner from '../../spinner';
 import './Login.css';
 
-const Login = ({ logIn }) => {
+const Login = ({ loading, error, onFormSubmit }) => {
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [loginFailed, setLoginFailed] = useState(false);
-  const [redirectToPreviousRoute, setRedirectToPreviousRoute] = useState(false);
+  const [email, setEmail] = useState('max@test.com');
+  const [password, setPassword] = useState('12345');
 
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    if (areCredentialsValid({ username, password })) {
-      logIn({ username });
-      setRedirectToPreviousRoute(true);
-    } else {
-      setLoginFailed(true);
-    }
-  }
-
-  if (redirectToPreviousRoute) {
-    return <Redirect to="/profile" />
+  const handleSubmit = (e) => {
+    onFormSubmit(e, email, password, setPassword);
   }
 
   return (
     <div className="Login">
       <h1>Login Page</h1>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form onSubmit={e => handleSubmit(e)}>
         <input
-          data-field-name="username"
+          data-field-name="email"
           type="text"
           placeholder="Имя"
-          value={username}
-          onChange={(e) => setUsername(e.currentTarget.value)}
+          value={email}
+          onChange={(e) => setEmail(e.currentTarget.value)}
         />
         <input
           data-field-name="password"
@@ -43,12 +29,13 @@ const Login = ({ logIn }) => {
           value={password}
           onChange={(e) => setPassword(e.currentTarget.value)}
         />
-        <button type="submit">Log in</button>
+        {
+          loading
+            ? < Spinner />
+            : <button type="submit">Войти</button>
+        }
       </form>
-      
-      {loginFailed &&
-        <p>Имя пользователя или пароль введены не верно</p>
-      }
+      {error && <p className="error">{error}</p>}
     </div>
   );
 }

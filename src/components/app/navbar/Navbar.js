@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = ({ isClientAuthorized })=> {
+const Navbar = ({ isClientAuthorized }) => {
   return (
     <div className="Navbar">
       <NavLink to="/" activeClassName="active" exact>Главная</NavLink>
@@ -11,8 +11,8 @@ const Navbar = ({ isClientAuthorized })=> {
         isClientAuthorized ? (
           <NavLink to="/profile">Профиль</NavLink>
         ) : (
-          <NavLink to="/login">Авторизоваться</NavLink>
-        )
+            <NavLink to="/login">Авторизоваться</NavLink>
+          )
       }
     </div>
   );

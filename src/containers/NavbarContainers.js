@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import Navbar from '../components/app/navbar';
 
 const NavbarContainer = ({ isClientAuthorized }) => {
-    return <Navbar isClientAuthorized={isClientAuthorized} />
+	return <Navbar isClientAuthorized={isClientAuthorized} />
 }
 
 const mapStateToProps = (state) => {
-    return {
-        isClientAuthorized: !!state.session.user
-    }
+	return {
+		isClientAuthorized: !!state.login.id
+	}
 }
 
 export default connect(mapStateToProps)(NavbarContainer);

@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import session from './session';
+import login from './login';
+import news from './news';
+import profile from './profile';
 
 export default combineReducers({
-    session
+	login, news, profile
 })

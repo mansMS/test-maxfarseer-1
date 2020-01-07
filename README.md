@@ -1,4 +1,4 @@
-Задание из github.com/maxfarseer/tz-webinars
+Задание из https://github.com/maxfarseer/tz-webinars/tree/tz-1-react-redux-react-router
 ## Тестовое задание #1
 
 Проверяем начальные навыки: react, redux, react-router
